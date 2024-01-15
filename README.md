@@ -1,3 +1,3 @@
-# Project DapsBid (Decentralized Bidding)
+# Project DapsBid (Decentralized Application Bidding)
 
 
