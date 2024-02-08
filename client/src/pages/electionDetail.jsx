@@ -57,7 +57,6 @@ const ElectionDetail = () => {
   return (
     <div>
       { isLoading && <Loader /> }
-
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
         <div className="flex-1 flex-col">
           <img src={state.imageUrl} alt="electionImage" className="w-full h-[410px] object-cover rounded-xl" />
@@ -178,7 +177,19 @@ const ElectionDetail = () => {
                 </div>
               </div>
             ) : (
-              <p className="font-epilouge font-normal mt-[20px] p-4 text-[20px] text-[#808191] bg-[#1c1c24] rounded-[10px] leading-[26px] text-center">Voting Window Has Closed</p>
+              <div className="my-[20px] p-4 bg-[#13131a] rounded-[10px]">
+                <p className="mt-[20px] font-epilouge font-normal leading-[22px] text-[#808191]">Voter(s)</p>
+                  { voters.length > 0 ? voters.map((voter, index) => (
+                    <div key={index}>
+                      <p className="mt-[10px] font-epilouge font-normal leading-[22px] text-[#808191] truncate">{index+1}. {voter}</p>
+                    </div>
+                  )) : (
+                    <div>
+                      <p className="mt-[10px] font-epilouge font-normal leading-[22px] text-[#808191] truncate">No votes submitted to the Election</p>
+                    </div>
+                  ) }
+                  <p className="font-epilouge font-normal mt-[20px] p-4 text-[20px] text-[#808191] bg-[#1c1c24] rounded-[10px] leading-[26px] text-center">Voting Window Has Closed</p>
+              </div>
             ) }
           </div>
         </div>
