@@ -13,7 +13,6 @@ import './index.css'
 // new blockchain dashboard by thirdweb: https://thirdweb.com/sepolia/0x41AA1F0AFc23A5fb3109c086f8A15CEc80E2E1C8
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const thirdWebClientId = process.env.CLIENT_ID;
 
 root.render(
   <ThirdwebProvider activeChain={ Sepolia } clientId='d0c3d918aa47e750ba0c2fa1b8fe660fS' >
